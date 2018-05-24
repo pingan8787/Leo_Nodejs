@@ -1,0 +1,63 @@
+var http = require('http');
+var cheerio = require('cheerio');
+var url = 'http://www.imooc.com/learn/348';
+
+// 使用cheerio模块  npm install cheerio
+function filterCapters (html){
+    var $ = cheerio.load(html);
+    //拿到每一章
+    var chapter = $('.chapter');//leanchapter -> chapter 
+
+    // [{
+    //     chapterTitle:'',
+    //     videos:[
+    //         title:'',
+    //         id:''
+    //     ]
+    // }]
+    //数据变量
+    var courseData = [];
+    chapter.each(function(item){
+        var charpter = $(this);
+        var chapterTitle = chapter.find('strong').text();
+        var videos = charpter.find('.video').children('li');
+        var charpterData = {
+            chapterTitle:chapterTitle,
+            videos:[]
+        }
+        videos.each(function(item){
+            var video = $(this).find('.J-media-item');
+            var videoTitle = video.text();
+            var id = video.attr('href').split('video/')[1];
+            charpterData.videos.push({
+                title:videoTitle,
+                id:id
+            })
+        })
+        courseData.push(charpterData);
+    })
+    return courseData;
+};
+
+function printCouresInfo(courseData){
+    courseData.forEach(function(item){
+        var chapterTitle = item.chapterTitle;
+        item.videos.forEach(function(video){
+            console.log('  【' + video.id + '】 '+video.title + '\n');
+        })
+    })
+}
+
+http.get(url,function(res){
+    var html = '';
+    res.on('data',function(data){
+        html += data
+    });
+
+    res.on('end',function(){
+        var courseData = filterCapters(html);
+        printCouresInfo(courseData);
+    });
+}).on('error',function(){
+    console.log('获取页面代码错误！');
+});

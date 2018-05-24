@@ -1,0 +1,15 @@
+extends ../layout.jade
+
+block content
+  .container
+    a.btn.btn-primary(href="/admin/movie", role="button") 添加
+    a.btn.btn-success(href="/admin/list", role="button") 查看
+    .row
+      each item in movies
+        .col-md-2
+          .img-thumbnail
+            a(href="/movie/#{item._id}")
+              img(src="#{item.poster}", alt="#{item.title}", width="100%", height="100%")
+            .caption
+              h3 #{title}
+              p: a.btn.btn-primary(href="/movie/#{item._id}", role="button") 观看预告片

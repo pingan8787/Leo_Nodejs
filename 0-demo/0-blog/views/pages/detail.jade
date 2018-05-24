@@ -1,0 +1,21 @@
+extends ../layout.jade
+
+block content
+  .container
+    .row
+      .col-md-7
+        embed(src="#{movie.flash}",allFullScreen="true", quality="height", width="100%", height="100%", align="middle", type="application/x-shockwave-flash")
+      .col-md-5
+        dl.dk-horizotal
+          dt 电影名字
+          dt #{movie.title}
+          dt 导演
+          dt #{movie.doctor}
+          dt 国家
+          dt #{movie.country}
+          dt 语言
+          dt #{movie.language}
+          dt 上映年份
+          dt #{movie.year}
+          dt 简介
+          dt #{movie.summary}
