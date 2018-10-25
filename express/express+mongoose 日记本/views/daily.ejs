@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="short icon" href="http://pingan8787.com/images/favicon.png" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/assets/index.css">
+    <script src="/assets/index.js"></script>
+    <title>平安小日记</title>
+</head>
+<body>
+    <div id="list_box">
+        <div class="page_header displayflex">
+            <div class="page_title flex2">平安小日记</div>
+            <div class="page_add flex1"><span class="add_btn"
+                onclick="commonToggle('#list_content')"
+                >+</span></div>
+        </div>
+        <div id="list_detail">
+            <ul>
+                <% dailyData.forEach(function(item){ %>
+                    <li>
+                        <div class="listbox_left flex1">
+                            <img src="/assets/images/head.jpg" alt="头像">
+                        </div>
+                        <div class="listbox_right flex5">
+                            <div class="listbox_header">
+                                <span class="flex4"><%= item.date %></span>
+                                <span class="flex1 textalign_right delete_open"
+                                >删除<span class="hideSpan"><%= item.id %></span></span>
+                            </div>
+                            <div><%= item.content %></div>
+                        </div>
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
+    </div>
+    <div id="list_content">
+        <div class="content_modal">
+            <div class="content_header displayflex">
+                <span class="content_title flex3">编辑内容</span>
+                <span class="flex1 textalign_right"
+                onclick="commonToggle('#list_content')"
+                >关闭</span>
+            </div>
+            <div class="content_edit">
+                <form>
+                    <p>填写内容：</p>
+                    <textarea name="content" rows="4" placeholder="输入内容" required></textarea>
+                    <p>填写验证码：</p>
+                    <input type="password">
+                    <br>
+                    <button name="code" type="submit" id="submit_form">提交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="list_delete">
+        <div class="content_modal">
+            <div class="content_header displayflex">
+                <span class="content_title flex3">确认删除</span>
+                <span class="flex1 textalign_right"
+                    onclick="commonToggle('#list_delete')"
+                >关闭</span>
+            </div>
+            <div class="content_edit">
+                <p>删除ID：<span class="delete_id"></span></p>
+                <p>填写验证码：</p>
+                <input class="delete_code" type="password">
+                <br>
+                <button name="code" type="submit" id="submit_delete">删除</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
