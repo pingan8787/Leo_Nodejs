@@ -1,0 +1,127 @@
+body,html{
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ul,li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+/* 通用 */
+.flex1{
+    flex: 1;
+}
+.flex2{
+    flex: 2;
+}
+.flex3{
+    flex: 3;
+}
+.flex4{
+    flex: 4;
+}
+.flex5{
+    flex: 5;
+}
+.displayflex{
+    display: flex;
+}
+.textalign_right{
+    text-align: right;
+}
+.page_header{
+    height: 60px;
+    line-height: 60px;
+    font-size: 30px;
+    align-items: center;
+    position: fixed;
+    width: calc(100% - 20px);
+    background: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.page_add{
+    text-align: right;
+}
+.page_add span{
+    color: #fff;
+    background: skyblue;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+#list_detail{
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+    padding-top: 100px;
+}
+#list_detail li{
+    display: flex;
+    margin-bottom: 20px;
+}
+#list_detail .listbox_right{
+    border: 1px solid #c0d3eb;
+    border-radius: 5px;
+}
+#list_detail .listbox_right div{
+    padding: 10px;
+}
+.listbox_left img{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+.listbox_header{
+    display: flex;
+    border-bottom: 1px solid #c0d3eb;
+    background-color: #f1f8ff;
+}
+/* 添加框 */
+#list_content,#list_delete{
+    width: 300px;
+    height: 220px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -110px;
+    margin-left: -150px;
+    background: #fff;
+    border: 1px solid #c0d3eb;
+    border-radius:5px;
+    display: none;
+}
+#list_delete{
+    height: 150px;
+}
+.content_header{
+    font-size: 16px;
+    background-color: #f1f8ff;
+    padding: 10px;
+    border-bottom: 1px solid #c0d3eb;
+}
+.content_edit{
+    padding: 10px;
+}
+.content_edit textarea{
+    width: 100%;
+    margin: 0;
+}
+.content_edit textarea,.content_edit input{
+    border:1px solid #ddd;
+}
+.content_edit p{
+    font-size: 12px;
+    margin: 0;
+}
+#submit_form{
+    display: block;
+    margin: 0 auto;
+}
+.hideSpan{
+    font-size: 0;
+    width: 0;
+    height: 0;
+    display: block;
+}
