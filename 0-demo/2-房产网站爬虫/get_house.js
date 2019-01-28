@@ -78,6 +78,7 @@ function save_data(data) {
 
 function init() {
     setInterval(() => {
+        house_index = 1;
         get_data();
     }, timer)
 }
