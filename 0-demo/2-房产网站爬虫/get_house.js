@@ -15,6 +15,7 @@ let house_arr = []; // 存放房屋信息
 let house_file = "house_file_" + Date.now();
 
 let timer = 1 * 60 * 1000; // 间隔刷新
+let interval = '';
 
 
 // 设置数据格式
@@ -72,12 +73,13 @@ function save_data(data) {
     ];
     var result = json2csv(data, title);
     fs.writeFile(house_file + '.csv', result, err => {
-        if (err) console.log('save file failed!')
+        if (err) console.log('save file failed!');
     });
 }
 
 function init() {
-    setInterval(() => {
+    interval = setInterval(() => {
+        console.log('开始抓取')
         house_index = 1;
         get_data();
     }, timer)
