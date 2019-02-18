@@ -1,4 +1,4 @@
-![阅读原文](https://juejin.im/post/5c676ba3e51d45798b51d65c#comment)   
+[阅读原文](https://juejin.im/post/5c676ba3e51d45798b51d65c#comment)   
 
 ## 一、fs 基础方法：
 
