@@ -1,7 +1,7 @@
 ﻿const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 const mongoose = require('mongoose');
-const url = 'mongodb://localhost:27017/daily';
+const url = 'mongodb://localhost:27017/dbName';
 // const MongoClient = require('mongodb').MongoClient;
 // function _connectDB(callback) {
 //     MongoClient.connect(url, (err, db) => {
