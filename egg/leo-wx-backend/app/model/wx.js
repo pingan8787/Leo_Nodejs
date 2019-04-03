@@ -6,7 +6,6 @@ module.exports = app => {
     const WxSchema = new Schema({
         article: {
             title: String,
-            id: Number, // 文件大小
             url:  String, // 文件url地址
         }
     });

@@ -1,0 +1,33 @@
+@import '~antd/dist/antd.css';
+@import './style/wx/wx.css';
+
+#root,.leo{
+  height: 100%;
+}
+
+.leo-header{
+  background: #fff;
+  padding: 0 16px;
+}
+
+.leo-content{
+  margin: 24px 16px;
+  padding: 24px;
+  background: #fff;
+  min-height: 280px;
+}
+
+.leo-nav-title,
+.leo-nav-title a{
+  display: inline-block;
+  width: 90%;
+}
+
+.leo-nav-title a{
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.ant-menu-item-selected .leo-nav-title a,
+.leo-nav-title:hover a{
+  color: #fff;
+}

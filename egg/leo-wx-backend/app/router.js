@@ -7,5 +7,8 @@ module.exports = app => {
   const { router, controller } = app;
   router.get('/', controller.home.index);
   router.get('/wx', controller.wx.index);
-  router.get('/wx/add', controller.wx.add);
+
+  router.post('/wx/add', controller.wx.add); // 添加文章
+  router.post('/wx/getDetail', controller.wx.getDetail); // 获取文章列表
+  router.get('/wx/getList', controller.wx.getList); // 获取文章列表
 };

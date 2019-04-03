@@ -1,0 +1,9 @@
+.wx-add-form .wx-add-item{
+    margin-bottom: 10px;
+}
+.wx-add-item .wx-add-label{
+    text-align: right;
+}
+.wx-add-item .wx-add-button{
+    text-align: center;
+}
