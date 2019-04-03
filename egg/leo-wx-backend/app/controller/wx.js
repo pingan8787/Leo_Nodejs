@@ -1,4 +1,4 @@
-const getWxDetail = require('../middleware/getWx').getWxDetail;
+const getWxDetail = require('../middleware/wxSpider').getWxDetail;
 
 module.exports = app => {
   class WxController extends app.Controller {
