@@ -1,3 +1,4 @@
+/* WxAdd.js 添加文章链接 */
 .wx-add-form .wx-add-item{
     margin-bottom: 10px;
 }
@@ -6,4 +7,11 @@
 }
 .wx-add-item .wx-add-button{
     text-align: center;
+}
+
+/* WxList.js 微信文章列表 */
+.wx-list-table td img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }

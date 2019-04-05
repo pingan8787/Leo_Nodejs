@@ -7,9 +7,11 @@ import './App.css';
 
 import Home from './page/Home';
 import Login from './page/Login';
-import Wx from './page/Wx';
+import WxAdd from './page/Wx/WxAdd';
+import WxList from './page/Wx/WxList';
 
 const { Header, Sider, Content } = Layout;
+const SubMenu = Menu.SubMenu;
 
 class App extends Component {
   state = {
@@ -38,12 +40,10 @@ class App extends Component {
                   <Link to="/login">登录</Link>
                 </span>
               </Menu.Item>
-              <Menu.Item key="2">
-                <Icon type="video-camera" />
-                <span className="leo-nav-title">
-                  <Link to="/wx">公众号文章管理</Link>
-                </span>
-              </Menu.Item>
+              <SubMenu key="2" title={<span><Icon type="mail" /><span>公众号文章管理</span></span>}>
+                <Menu.Item key="21"><Link to="/wx_add">添加文章</Link></Menu.Item>
+                <Menu.Item key="24"><Link to="/wx_list">文章列表</Link></Menu.Item>
+              </SubMenu>
               <Menu.Item key="3">
                 <Icon type="upload" />
                 <span className="leo-nav-title">
@@ -61,9 +61,10 @@ class App extends Component {
               />
             </Header>
             <Content className="leo-content">
-              <Route exact path="/" component={Wx} />
+              <Route exact path="/" component={WxAdd} />
               <Route path="/login" component={Login} />
-              <Route path="/wx" component={Wx} />
+              <Route path="/wx_add" component={WxAdd} />
+              <Route path="/wx_list" component={WxList} />
             </Content>
           </Layout>
         </Router>

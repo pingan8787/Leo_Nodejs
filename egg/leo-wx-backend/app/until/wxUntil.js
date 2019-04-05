@@ -5,7 +5,7 @@ module.exports = {
         @params {string} str
         @return {string} str
     */
-    delSpace (str){ 
+    leoTrim (str){ 
         return str.replace(/(^\s*)|(\s*$)/g, "")
     }
 }
