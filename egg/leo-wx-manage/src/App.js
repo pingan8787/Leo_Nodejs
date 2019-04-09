@@ -74,9 +74,3 @@ class App extends Component {
 }
 
 export default App;
-
-{/* <Router>
-</Router> */}
-
-{/* <Link to="/home">首页</Link>
-<Link to="/wx">公众号文章管理</Link> */}

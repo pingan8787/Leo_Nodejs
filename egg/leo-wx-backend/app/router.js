@@ -10,5 +10,6 @@ module.exports = app => {
 
   // router.post('/wx/add', controller.wx.add); // 添加文章
   router.post('/wx/add', controller.wx.add); // 添加文章
+  router.post('/wx/preview', controller.wx.preview); // 预览文章
   router.get('/wx/getList', controller.wx.getList); // 获取文章列表
 };

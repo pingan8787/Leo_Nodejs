@@ -7,5 +7,5 @@ module.exports = {
     */
     leoTrim (str){ 
         return str.replace(/(^\s*)|(\s*$)/g, "")
-    }
+    },
 }

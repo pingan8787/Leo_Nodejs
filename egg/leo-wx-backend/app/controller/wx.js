@@ -14,9 +14,27 @@ module.exports = app => {
             const body = this.ctx.request.body;
             const result = await getWxDetail(body.url);
             this.ctx.service.wx.add(result);
+            console.log(result)
             this.ctx.body = {
                 code: 200,
                 message: `成功添加文章《${result.title}》`,
+                data: result
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    /**
+     * 预览一篇文章
+     */
+    async preview (){
+        try {
+            const body = this.ctx.request.body;
+            const result = await getWxDetail(body.url);
+            this.ctx.body = {
+                code: 200,
+                message: `成功预览文章《${result.title}》`,
                 data: result
             }
         } catch (error) {
