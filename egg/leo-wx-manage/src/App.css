@@ -1,5 +1,6 @@
 @import '~antd/dist/antd.css';
 @import './style/wx/wx.css';
+@import './style/user/user.css';
 
 #root,.leo{
   height: 100%;

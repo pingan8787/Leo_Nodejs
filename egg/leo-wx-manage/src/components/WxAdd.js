@@ -92,7 +92,7 @@ export default class WxAddComponent extends React.Component {
     render (){
         const { url } = this.state.postData
         const { previewData } = this.state
-        console.log('2122',previewData)
+        console.log('预览的数据',previewData)
         return (
             <div className="wx-add-form">
                 文章地址：

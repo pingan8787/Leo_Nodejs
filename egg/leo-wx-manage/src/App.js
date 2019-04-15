@@ -9,6 +9,7 @@ import Home from './page/Home';
 import Login from './page/Login';
 import WxAdd from './page/Wx/WxAdd';
 import WxList from './page/Wx/WxList';
+import Register from './page/Register';
 
 const { Header, Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -50,6 +51,12 @@ class App extends Component {
                   <Link to="/home">首页</Link>
                 </span>
               </Menu.Item>
+              <Menu.Item key="4">
+                <Icon type="upload" />
+                <span className="leo-nav-title">
+                  <Link to="/register">注册</Link>
+                </span>
+              </Menu.Item>
             </Menu>
           </Sider>
           <Layout>
@@ -65,6 +72,7 @@ class App extends Component {
               <Route path="/login" component={Login} />
               <Route path="/wx_add" component={WxAdd} />
               <Route path="/wx_list" component={WxList} />
+              <Route path="/register" component={Register} />
             </Content>
           </Layout>
         </Router>

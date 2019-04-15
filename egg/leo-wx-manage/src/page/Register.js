@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Form, Icon, Input, Button, Checkbox, Modal } from 'antd';
 import { util_fetch } from '../util/fetch';
+import { URL } from '../config/url';
 
 class Login extends Component{
     constructor (props){
@@ -13,11 +14,18 @@ class Login extends Component{
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 console.log('表单数据: ', values);
-                const options = util_fetch('POST', values)
-                fetch(URL.BASEURL + URL.USER_LOGIN, options)
+                const options = util_fetch.headers('POST', values)
+                fetch(URL.BASEURL + URL.USER_REGISTER, options)
                     .then(res => res.json())
                     .then(data => {
-                        console.log('登录结果数据',data)
+                        console.log('注册成功',data)
+                        Modal.success({
+                            title: '成功！',
+                            content: `帐号【${data.data.account}】注册成功`,
+                            okText: '确定',
+                            destroyOnClose: true,
+                        });
+                        this.props.history.push('/login')
                     })
                     .catch(e => {
                         console.log('错误:', e)
@@ -44,15 +52,15 @@ class Login extends Component{
                     )}
                 </Form.Item>
                 <Form.Item>
-                    {getFieldDecorator('remember', {
+                    {getFieldDecorator('isAdmin', {
                         valuePropName: 'checked',
                         initialValue: true,
                     })(
-                        <Checkbox>记住密码</Checkbox>
+                        <Checkbox>是否成为管理员</Checkbox>
                     )}
                     <a className="login-form-forgot" href="">忘记密码？</a>
                     <Button type="primary" htmlType="submit" className="login-form-button">
-                        登录
+                        注册
                     </Button>
                     或者 <a href="">马上去注册</a>
                 </Form.Item>
