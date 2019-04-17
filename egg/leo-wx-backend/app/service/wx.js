@@ -25,8 +25,8 @@ module.exports = app => {
      */
     async findAll (){
       try {
-        // let list = await this.ctx.model.Wx.find()
-        // console.log(list)
+        let size = await this.ctx.model.Wx.count()
+        console.log(list)
       } catch (error) {
         console.log(error)
       }
@@ -34,16 +34,22 @@ module.exports = app => {
 
     /**
      * 查询一条记录
-     * @param {obj} option 查询语句
-     * @param {obj} col 查询列
-     * 
      * @param {number} option.pageSize 每页数量
-     * @param {number} option.sorted 数据排序 -1降序 1升序 
+     * @param {number} option.pageIndex 当前页数
+     * @param {number} option.sort 数据排序 -1降序 1升序 
      */
-    async find ( option = {}, col = {}){
+    async find (option){
       try{
-        const { pageSize = 10, sorted = -1 } = option
-        return this.ctx.model.Wx.find().sort({_id: sorted}).limit(pageSize)
+        const { pageSize = 10, pageIndex = 1, sort = -1 } = option
+        let list  = await this.ctx.model.Wx.find().sort({_id: sort}).limit(pageSize * pageIndex)
+        let total = await this.ctx.model.Wx.count()
+        return {
+          pageSize,
+          pageIndex,
+          sort,
+          list, 
+          total
+        }
       }catch (error) {
         console.log(error)
       }

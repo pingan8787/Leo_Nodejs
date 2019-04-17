@@ -63,6 +63,29 @@ module.exports = app => {
         }
     }
 
+    /**
+     * 读取文章列表 含 分页参数
+     */
+    async list (){
+        try {
+            // const { pageSize = 10, pageIndex = 1 } = option
+            const option =  { 
+                pageSize : 10, 
+                pageIndex : 1,
+                sort: -1
+            }
+            let list = await this.ctx.service.wx.find(option)
+            console.log(list)
+            this.ctx.body = {
+                code: 200,
+                message: `成功读取文章列表`,
+                data: list
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
   }
   return WxController
 }
