@@ -11,7 +11,7 @@
 
 
 ## Nodejs相关项目（个人）
-1. [微信公众号文章管理（Taro + AntDesign + Eggjs + Mongoose）](https://github.com/pingan8787/Leo_Nodejs/tree/master/egg) --> 开发中
+1. [微信公众号文章管理（Taro + AntDesign + Eggjs + Mongoose）](https://github.com/pingan8787/Leo_WX) --> 开发中
 
 2. [心情留言本（Express + Mongoose）](https://github.com/pingan8787/Leo_Nodejs/tree/master/express/express%2Bmongoose%20%E6%97%A5%E8%AE%B0%E6%9C%AC) --> 完成
 
