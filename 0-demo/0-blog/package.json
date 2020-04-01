@@ -177,7 +177,7 @@
     "jade": "^1.11.0",
     "lodash.get": "^4.4.2",
     "lazy-cache": "^1.0.4",
-    "kind-of": "^3.2.2",
+    "kind-of": "^6.0.3",
     "lodash": "^4.17.10",
     "media-typer": "^0.3.0",
     "merge-descriptors": "^1.0.1",
